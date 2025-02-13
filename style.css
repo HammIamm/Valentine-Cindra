@@ -60,7 +60,7 @@ p {
 .swiper-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Ganti dari cover menjadi contain supaya gambar tidak terpotong */
     border-radius: 10px;
     display: block;
 }
