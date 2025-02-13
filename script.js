@@ -1,4 +1,4 @@
-// *Typing Effect*
+// Typing Effect
 const text = `First of all, aku mau bilang ini, makasih yaa sayang udah nerima aku yang ke sekian kali, walaupun mungkin buat kamu itu nggak gampang. Akhir-akhir ini aku mikir, dengan semua naik turunnya hubungan kita, dengan aku yang pengen selalu sama kamu dan nggak mau udahan, tapi justru karena itu kita masih bisa bareng terus. Dan yang aku lihat, kita tuh bahagia yaa, kaya makin bisa saling nerima satu sama lain. Terus juga aku ngerasa kalau bercanda tuh kayanya bahagia banget gitu, dan kita juga sama-sama saling butuh gitu lhoo. Jadi kaya, ih gemes banget gitu mwehehehe.
 
 Sama kamu itu gregetan tauu, wkwkwk. Dengan sifat kamu yang gengsian itu, yaa walaupun di balik sifat itu ada orang yang sebenernya sayang dan peduli banget sama aku. Cuma yaa gengsian aja orangnya 😗😗. Makasih yaa, sudah selalu ada buat aku dan buat kita. Makasih juga sudah bertahan sama aku di sini sampai sejauh ini. Makasih sudah membuat aku merasa disayang. Semoga kita selalu bareng yaa, sayangg 😖❤.
@@ -22,10 +22,11 @@ const speed = 50; // Kecepatan ngetik (ms)
 
 document.addEventListener("DOMContentLoaded", () => {
     const typingElement = document.getElementById("typing-text");
+
     if (typingElement) {
         function typeWriter() {
             if (index < text.length) {
-                typingElement.innerHTML += text.charAt(index);
+                typingElement.textContent += text.charAt(index);
                 index++;
                 setTimeout(typeWriter, speed);
             }
@@ -33,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(typeWriter, 500);
     }
 
-    // *Slideshow / Carousel Foto*
+    // Slideshow / Carousel Foto
     const swiper = new Swiper(".swiper-container", {
         loop: true,
         autoplay: {
