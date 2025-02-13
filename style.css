@@ -4,9 +4,9 @@
     opacity: 0;
     white-space: normal; /* Pastikan teks turun otomatis */
     word-wrap: break-word;
-    overflow-wrap: break-word;
+    overflow-wrap: anywhere; /* FIX: Supaya teks turun tanpa motong kata */
     max-width: 100%; /* Supaya nggak keluar box */
-    hyphens: auto; /* FIX: Biar kata nggak kepotong sembarangan */
+    hyphens: none; /* Jangan ada pemenggalan kata */
 }
 
 /* Fix buat HP */
@@ -14,6 +14,6 @@
     .typing {
         font-size: 14px;
         line-height: 1.5;
-        word-break: normal; /* Biar kata turun dengan baik */
+        word-break: keep-all; /* FIX: Supaya kata tetap utuh */
     }
 }
