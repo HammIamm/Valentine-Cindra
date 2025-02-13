@@ -18,6 +18,8 @@ body {
     max-width: 100%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .card {
@@ -40,5 +42,28 @@ p {
     color: #333;
     word-wrap: break-word;
     white-space: pre-line;
-    text-align: justify;
+    text-align: justify;
+}
+
+/* Tambahin styling buat galeri */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    max-width: 400px; /* Sesuai ukuran card */
+}
+
+.gallery img {
+    width: 100px; /* Ukuran lebih kecil biar muat banyak */
+    height: 100px;
+    object-fit: cover; /* Biar proporsinya tetap bagus */
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
 }
