@@ -3,19 +3,23 @@ document.addEventListener("DOMContentLoaded", function () {
     let delay = 0;
 
     paragraphs.forEach((p) => {
-        let text = p.textContent.trim(); // Ambil teks asli
-        p.textContent = ""; // Kosongkan dulu biar efek mengetik kelihatan
+        let text = p.innerHTML.trim(); // Ambil teks asli (bukan textContent)
+        p.innerHTML = ""; // Kosongkan dulu biar efek mengetik jalan
         p.style.opacity = "1";
 
         setTimeout(() => {
             typeText(p, text, 0);
         }, delay);
-        delay += text.length * 50 + 500; // Tambah jeda antar paragraf
+        delay += text.length * 50 + 500; // Jeda antar paragraf
     });
 
     function typeText(element, text, i) {
         if (i < text.length) {
-            element.textContent += text[i]; // Tambahkan karakter satu per satu
+            if (text[i] === " ") {
+                element.innerHTML += "&nbsp;"; // Fix spasi biar nggak hilang
+            } else {
+                element.innerHTML += text[i];
+            }
             setTimeout(() => typeText(element, text, i + 1), 50);
         }
     }
