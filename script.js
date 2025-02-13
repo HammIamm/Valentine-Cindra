@@ -1,16 +1,23 @@
-const paragraphs = document.querySelectorAll(".typing");
-let delay = 0;
+document.addEventListener("DOMContentLoaded", function () {
+    const paragraphs = document.querySelectorAll(".typing");
+    let delay = 0;
 
-paragraphs.forEach((p, index) => {
-    let text = p.innerText;
-    p.innerText = "";
-    p.style.display = "block"; // Pastikan paragraf muncul satu per satu
+    paragraphs.forEach((p) => {
+        const text = p.innerHTML.trim(); // Ambil teks tanpa spasi berantakan
+        p.innerHTML = ""; // Kosongkan teks dulu
+        p.style.display = "block";
 
-    text.split("").forEach((char, i) => {
         setTimeout(() => {
-            p.innerText += char;
-        }, delay + i * 50); // Kecepatan ngetik (50ms per karakter)
-    });
+            let i = 0;
+            const typingEffect = setInterval(() => {
+                p.innerHTML += text[i];
+                i++;
+                if (i === text.length) {
+                    clearInterval(typingEffect);
+                }
+            }, 30); // Kecepatan mengetik
+        }, delay);
 
-    delay += text.length * 50 + 500; // Tambah delay antar paragraf (500ms)
+        delay += text.length * 30 + 500; // Jeda antar paragraf
+    });
 });
