@@ -1,24 +1,34 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const messageElement = document.getElementById("message");
+const text = [
+    "First of all, aku mau bilang ini, makasih yaa sayang udah nerima aku yang ke sekian kali, walaupun mungkin buat kamu itu nggak gampang. Akhir-akhir ini aku mikir, dengan semua naik turunnya hubungan kita, dengan aku yang pengen selalu sama kamu dan nggak mau udahan, tapi justru karena itu kita masih bisa bareng terus. Dan yang aku lihat, kita tuh bahagia yaa, kaya makin bisa saling nerima satu sama lain. Terus juga aku ngerasa kalau bercanda tuh kayanya bahagia banget gitu, dan kita juga sama-sama saling butuh gitu lhoo. Jadi kaya, ih gemes banget gitu mwehehehe.",
+    
+    "Sama kamu itu gregetan tauu, wkwkwk. Dengan sifat kamu yang gengsian itu, yaa walaupun di balik sifat itu ada orang yang sebenernya sayang dan peduli banget sama aku. Cuma yaa gengsian aja orangnya 😗😗. Makasih yaa, sudah selalu ada buat aku dan buat kita. Makasih juga sudah bertahan sama aku di sini sampai sejauh ini. Makasih sudah membuat aku merasa disayang. Semoga kita selalu bareng yaa, sayangg 😖❤.",
+    
+    "Walaupun kita sekarang jauh, dan itu terkadang nggak gampang buat jalaninnya, tapi semoga kita selalu punya alasan buat mau berusaha dan bertahan dengan segala masalah yang bakal ada nanti. Pasti kita bisaa yaaa, sayangg‼",
+    
+    "There’s one thing you should know: I’m so happy with you. I met the happiest version of myself when I’m with you, and I hope you feel the same ❤🧸.",
+    
+    "Walaupun kadang kamu nyebelin, tapi aku tetep sayang sama kamu 😚.",
+    
+    "Aku juga minta maaf yaa sayangg, untuk semua hal yang mungkin kurang aku usahakan, dan semua dari diri aku yang masih banyak kekurangannya. Maaf aku juga kadang nyebelin, terlalu pengen tau tentang kamu, terlalu banyak nuntut kamu. Aku minta maaf yaa sayang, maaf sekalii. Tapi sekarang aku sedang ubah pelan-pelan supaya lebih baik untuk kita yaaa‼ Makasih yaa sayangg, sudah nerima akuu ☹❤.",
+    
+    "Dan yang terakhir, I hope we can always be happy together. Semoga kita selalu bareng yaa sayangg, dan semoga kita selalu bisa lewatin semua hal yang bakal kita hadapin di depan kita.",
+    
+    "I lovee youu sayangg😖😖❤❤‼",
+    
+    "Sayangg sekalii samaa kamuu hihiii~ Kamu bakal selalu jadi Cindra yang lucuu itu di mata akuu 😚😚🤏🏻🤏🏻❤❤🫂🫂🧸🧸🤍🤍"
+];
 
-    const text = `First of all aku mau bilang ini, makasih yaa sayangg udah nerima akuu yang ke sekian kali walaupun mungkin untuk kamu itu ga gampang.
-    
-    Akhir-akhir ini aku mikir dengan semua naik turunnya hubungan kita, dengan aku yang pengen selalu sama kamu dan gamau kehilangan kamu, kadang kita bisa saling nyaman tapi juga bisa ada konflik kecil yang ganggu.
-    
-    Tapi karena itu yaa kita masih bisa bareng terus dan nyoba buat lebih ngerti satu sama lain. Aku seneng karena kita bisa tetap bertahan meskipun kadang gengsi dan keras kepala masih suka muncul.
-    
-    Terus juga aku ngerasa kalo bercandaan tuh kayaknya banyak yang cuma bisa aku lakuin sama kamu doang. Makanya aku pengen kita tetap kayak gini terus.
-    
-    Pokoknya intinya aku sayang banget sama kamu, dan aku berharap kita bisa terus bareng tanpa harus mikirin hal-hal yang bisa bikin kita jauh. Happy Valentine’s Day, Cindra! 💖`;
+const typingText = document.getElementById("typing-text");
 
-    let index = 0;
-    function typeText() {
-        if (index < text.length) {
-            messageElement.innerHTML += text[index] === "\n" ? "<br><br>" : text[index];
-            index++;
-            setTimeout(typeText, 30);
+async function typeText() {
+    for (let paragraph of text) {
+        for (let i = 0; i < paragraph.length; i++) {
+            typingText.innerHTML += paragraph[i];
+            await new Promise(resolve => setTimeout(resolve, 25));
         }
+        typingText.innerHTML += "<br><br>";  
+        await new Promise(resolve => setTimeout(resolve, 500));  
     }
+}
 
-    typeText();
-});
+typeText();
