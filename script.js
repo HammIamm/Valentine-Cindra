@@ -19,35 +19,34 @@ Sayangg sekalii samaa kamuu hihiii~ Kamu bakal selalu jadi Cindra yang lucuu itu
 
 let index = 0;
 const speed = 50; // Kecepatan ngetik (ms)
-const typingElement = document.getElementById("typing-text");
 
-function typeWriter() {
-    if (index < text.length) {
-        typingElement.innerHTML += text.charAt(index);
-        index++;
-        setTimeout(typeWriter, speed);
+document.addEventListener("DOMContentLoaded", () => {
+    const typingElement = document.getElementById("typing-text");
+    if (typingElement) {
+        function typeWriter() {
+            if (index < text.length) {
+                typingElement.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        setTimeout(typeWriter, 500);
     }
-}
 
-// *Slideshow / Carousel Foto*
-const images = [
-    "photo1.jpg", "photo2.jpg", "photo3.jpg", "photo4.jpg", "photo5.jpg",
-    "photo6.jpg", "photo7.jpg", "photo8.jpg", "photo9.jpg", "photo10.jpg",
-    "photo11.jpg", "photo12.jpg", "photo13.jpg", "photo14.jpg", "photo15.jpg",
-    "photo16.jpg", "photo17.jpg"
-];
-
-let currentIndex = 0;
-const imageElement = document.getElementById("slideshow-image");
-
-function showNextImage() {
-    currentIndex = (currentIndex + 1) % images.length;
-    imageElement.src = images[currentIndex];
-}
-
-// Ganti gambar setiap 3 detik
-setInterval(showNextImage, 3000);
-
-window.onload = () => {
-    setTimeout(typeWriter, 500);
-};
+    // *Slideshow / Carousel Foto*
+    const swiper = new Swiper(".swiper-container", {
+        loop: true,
+        autoplay: {
+            delay: 3000, // 3 detik per slide
+            disableOnInteraction: false
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+        }
+    });
+});
