@@ -2,12 +2,13 @@
     font-size: 16px;
     color: #333;
     opacity: 0;
-    white-space: normal; /* Teks turun otomatis */
+    white-space: normal; /* Supaya teks turun otomatis */
     word-wrap: break-word;
     overflow-wrap: break-word; /* Pastikan kata turun tanpa terpotong */
     max-width: 100%; /* Supaya tetap di dalam box */
     line-height: 1.6; /* Jarak antar baris lebih enak dibaca */
     text-align: justify; /* Rapi kiri-kanan */
+    hyphens: auto; /* Biar kata turun dengan benar */
 }
 
 /* Fix buat HP */
@@ -15,6 +16,7 @@
     .typing {
         font-size: 14px;
         line-height: 1.6;
-        word-break: break-word; /* FIX: Supaya kata tetap utuh */
+        word-break: keep-all; /* FIX PALING KUAT: Kata turun tanpa pecah tengah huruf */
+        hyphens: none; /* Tambahan buat jaga-jaga */
     }
 }
