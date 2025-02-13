@@ -1,38 +1,34 @@
-/* Background Pink Pastel */
 body {
-    background-color: #FFD1DC;
+    font-family: 'Arial', sans-serif;
+    background-color: #FFC0CB;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    font-family: 'Arial', sans-serif;
 }
 
-/* Box untuk pesan */
 .container {
     background: white;
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     max-width: 90%;
     width: 400px;
+    text-align: center;
 }
 
-/* Judul */
 h1 {
-    color: #FF4081;
+    color: #FF1493;
     font-size: 24px;
 }
 
-/* Gaya teks utama */
-.typing {
+.message-box {
     font-size: 16px;
     color: #333;
-    opacity: 0;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    line-height: 1.6;
-    text-align: justify;
+    text-align: left;
+    padding: 10px;
+    border-radius: 10px;
+    background: #FFF0F5;
+    white-space: pre-line;
 }
