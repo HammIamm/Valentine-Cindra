@@ -14,10 +14,12 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 90%;
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
     text-align: center;
-    overflow: hidden; /* Biar teks nggak keluar kotak */
+    overflow: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .title {
@@ -28,26 +30,26 @@ body {
 
 #text-container {
     text-align: left;
-    overflow-wrap: break-word; /* Biar teks otomatis turun */
-    word-wrap: break-word;
     white-space: normal;
+    width: 100%;
 }
 
 .typing {
     font-size: 16px;
     color: #333;
     opacity: 0;
-    white-space: pre-wrap; /* Pastikan spasi & enter tetap ada */
+    white-space: normal; /* Pastikan teks tetap turun */
     word-wrap: break-word;
     overflow-wrap: break-word;
     max-width: 100%; /* Biar teks nggak melewati kotaknya */
 }
 
-/* Tambahan untuk layar HP */
+/* FIX untuk HP supaya teks nggak keluar */
 @media (max-width: 480px) {
     .container {
-        width: 90%;
+        width: 95%;
         padding: 15px;
+        max-width: 95%;
     }
 
     .title {
@@ -55,6 +57,7 @@ body {
     }
 
     .typing {
-        font-size: 14px;
+        font-size: 14px;
+        line-height: 1.5; /* Spasi antar baris biar nggak nempel */
     }
 }
