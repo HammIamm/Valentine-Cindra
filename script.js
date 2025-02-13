@@ -1,23 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const paragraphs = document.querySelectorAll(".typing");
+    let paragraphs = document.querySelectorAll(".typing");
     let delay = 0;
 
-    paragraphs.forEach((p) => {
-        const text = p.textContent.trim(); // Pastikan teks tetap rapi
-        p.textContent = ""; // Kosongkan teks dulu
-        p.style.display = "block";
-
+    paragraphs.forEach((p, index) => {
+        let text = p.innerText;
+        p.innerText = "";
+        p.style.opacity = "1"; // Biar tetap terlihat
         setTimeout(() => {
-            let i = 0;
-            const typingEffect = setInterval(() => {
-                p.textContent += text[i];
-                i++;
-                if (i === text.length) {
-                    clearInterval(typingEffect);
-                }
-            }, 30); // Kecepatan mengetik
+            typeText(p, text);
         }, delay);
+        delay += text.length * 50 + 500; // Delay antar paragraf
+    });
 
-        delay += text.length * 30 + 500; // Jeda antar paragraf
-    });
+    function typeText(element, text, i = 0) {
+        if (i < text.length) {
+            element.innerText += text.charAt(i);
+            setTimeout(() => typeText(element, text, i + 1), 50); // Kecepatan ketik
+        }
+    }
 });
