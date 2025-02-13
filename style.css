@@ -17,6 +17,7 @@ body {
     max-width: 90%;
     width: 400px;
     text-align: center;
+    overflow: hidden; /* Biar teks nggak keluar kotak */
 }
 
 .title {
@@ -25,11 +26,35 @@ body {
     font-weight: bold;
 }
 
+#text-container {
+    text-align: left;
+    overflow-wrap: break-word; /* Biar teks otomatis turun */
+    word-wrap: break-word;
+    white-space: normal;
+}
+
 .typing {
     font-size: 16px;
     color: #333;
-    text-align: left;
     opacity: 0;
     white-space: pre-wrap; /* Pastikan spasi & enter tetap ada */
-    word-wrap: break-word;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%; /* Biar teks nggak melewati kotaknya */
+}
+
+/* Tambahan untuk layar HP */
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .typing {
+        font-size: 14px;
+    }
 }
