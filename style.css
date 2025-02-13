@@ -1,22 +1,50 @@
+/* Background Pink Pastel Biar Lebih Aesthetic */
+body {
+    background-color: #FFD1DC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Box untuk pesan */
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 90%;
+    width: 400px;
+}
+
+/* Judul Valentine */
+h1 {
+    color: #FF4081;
+    font-size: 24px;
+}
+
+/* Gaya teks utama */
 .typing {
     font-size: 16px;
     color: #333;
     opacity: 0;
-    white-space: normal; /* Supaya teks turun otomatis */
+    white-space: normal;
     word-wrap: break-word;
-    overflow-wrap: break-word; /* Pastikan kata turun tanpa terpotong */
-    max-width: 100%; /* Supaya tetap di dalam box */
-    line-height: 1.6; /* Jarak antar baris lebih enak dibaca */
-    text-align: justify; /* Rapi kiri-kanan */
-    hyphens: auto; /* Biar kata turun dengan benar */
+    overflow-wrap: break-word;
+    max-width: 100%;
+    line-height: 1.6;
+    text-align: justify;
 }
 
-/* Fix buat HP */
+/* FIX Supaya Kata Gak Kepotong */
 @media (max-width: 480px) {
     .typing {
         font-size: 14px;
         line-height: 1.6;
-        word-break: keep-all; /* FIX PALING KUAT: Kata turun tanpa pecah tengah huruf */
-        hyphens: none; /* Tambahan buat jaga-jaga */
+        word-break: break-word;
+        hyphens: auto;
     }
 }
