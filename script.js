@@ -20,16 +20,20 @@ Sayangg sekalii samaa kamuu hihiii~ Kamu bakal selalu jadi Cindra yang lucuu itu
 let index = 0;
 const speed = 50; // Kecepatan ngetik (ms)
 
+// Fungsi untuk efek ketik
+function typeWriter() {
+    if (index < text.length) {
+        const typingElement = document.getElementById("typing-text");
+        typingElement.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, speed);
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+    // Memulai efek ketik
     const typingElement = document.getElementById("typing-text");
     if (typingElement) {
-        function typeWriter() {
-            if (index < text.length) {
-                typingElement.innerHTML += text.charAt(index);
-                index++;
-                setTimeout(typeWriter, speed);
-            }
-        }
         setTimeout(typeWriter, 500);
     }
 
@@ -50,9 +54,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Autoplay MP3 saat halaman dimuat
-    const audioElement = new Audio('path/to/Fearless MP3'); // Ganti dengan path yang benar
-    audioElement.autoplay = true; // Set autoplay
-    audioElement.loop = true; // Set loop jika ingin musik diputar berulang-ulang
-    audioElement.play(); // Mulai memutar musik
+    // Pemutar Musik (MP3)
+    const audioElement = new Audio('Fearless MP3.mp3');  // Pastikan nama file dan ekstensi benar
+    audioElement.autoplay = true; // Mengatur autoplay agar musik langsung diputar
+    audioElement.loop = true; // Agar musik berulang terus
+    audioElement.play(); // Memulai pemutaran musik
 });
