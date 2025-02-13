@@ -1,4 +1,4 @@
-/* Background Pink Pastel Biar Lebih Aesthetic */
+/* Background Pink Pastel */
 body {
     background-color: #FFD1DC;
     display: flex;
@@ -20,7 +20,7 @@ body {
     width: 400px;
 }
 
-/* Judul Valentine */
+/* Judul */
 h1 {
     color: #FF4081;
     font-size: 24px;
@@ -31,20 +31,8 @@ h1 {
     font-size: 16px;
     color: #333;
     opacity: 0;
-    white-space: normal;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    max-width: 100%;
     line-height: 1.6;
-    text-align: justify;
-}
-
-/* FIX Supaya Kata Gak Kepotong */
-@media (max-width: 480px) {
-    .typing {
-        font-size: 14px;
-        line-height: 1.6;
-        word-break: break-word;
-        hyphens: auto;
-    }
+    text-align: justify;
 }
