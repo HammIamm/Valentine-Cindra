@@ -1,22 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let paragraphs = document.querySelectorAll(".typing");
-    let delay = 0;
+    const textElement = document.getElementById("text");
+    const text = First of all aku mau bilang ini, makasih yaa sayangg udah nerima akuu yang ke sekian kali walaupun mungkin untuk kamu itu ga gampang. Akhir-akhir ini aku mikir dengan semua naik turunnya hubungan kita dengan aku yang pengen selalu sama kamu dan gamau kehilangan kamu.;
 
-    paragraphs.forEach((p) => {
-        let text = p.innerHTML.trim();
-        p.innerHTML = ""; // Kosongin dulu biar efek mengetik muncul
-        p.style.opacity = "1";
+    let index = 0;
 
-        setTimeout(() => {
-            typeText(p, text, 0);
-        }, delay);
-        delay += text.length * 50 + 500; // Jeda antar paragraf
-    });
+    function typeWriter() {
+        if (index < text.length) {
+            textElement.innerHTML += text[index];
+            index++;
+            setTimeout(typeWriter, 40); // Lebih cepat tapi masih smooth
+        }
+    }
 
-    function typeText(element, text, i) {
-        if (i < text.length) {
-            element.innerHTML += text[i] === " " ? "&nbsp;" : text[i]; // Pastikan spasi tetap ada
-            setTimeout(() => typeText(element, text, i + 1), 50);
-        }
-    }
+    textElement.style.opacity = 1;
+    typeWriter();
 });
