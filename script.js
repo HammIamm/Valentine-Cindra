@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let delay = 0;
 
     paragraphs.forEach((p) => {
-        let text = p.innerHTML.trim(); // Ambil teks asli (bukan textContent)
-        p.innerHTML = ""; // Kosongkan dulu biar efek mengetik jalan
+        let text = p.innerHTML.trim();
+        p.innerHTML = ""; // Kosongin dulu biar efek mengetik muncul
         p.style.opacity = "1";
 
         setTimeout(() => {
@@ -15,11 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function typeText(element, text, i) {
         if (i < text.length) {
-            if (text[i] === " ") {
-                element.innerHTML += "&nbsp;"; // Fix spasi biar nggak hilang
-            } else {
-                element.innerHTML += text[i];
-            }
+            element.innerHTML += text[i] === " " ? "&nbsp;" : text[i]; // Pastikan spasi tetap ada
             setTimeout(() => typeText(element, text, i + 1), 50);
         }
     }
