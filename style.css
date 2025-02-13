@@ -58,8 +58,8 @@ p {
 }
 
 .swiper-slide img {
-    width: 70%;
-    height: 70%;
+    width: 100%;
+    height: 50%;
     object-fit: cover; /* Gambar akan memenuhi area dan terpotong jika perlu */
     border-radius: 10px;
     display: block;
