@@ -14,14 +14,6 @@
             <p id="typing-text"></p>
         </div>
 
-        <!-- Pemutar Musik MP3 -->
-        <div class="audio-player">
-            <audio controls>
-                <source src="Fearless MP3" type="audio/mp3">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-
         <!-- Slideshow Foto -->
         <div class="swiper-container">
             <div class="swiper-wrapper">
@@ -43,12 +35,16 @@
                 <div class="swiper-slide"><img src="photo16.jpg" alt="Foto 16"></div>
                 <div class="swiper-slide"><img src="photo17.jpg" alt="Foto 17"></div>
             </div>
-            <!-- Tombol Navigasi -->
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
-            <!-- Indikator (dot) -->
             <div class="swiper-pagination"></div>
         </div>
+
+        <!-- Audio Player -->
+        <audio id="audio-player" controls>
+            <source src="Fearless MP3.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
