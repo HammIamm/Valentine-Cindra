@@ -12,14 +12,15 @@ body {
     align-items: center;
     min-height: 100vh;
     padding: 20px;
+    flex-direction: column;
 }
 
 .container {
     max-width: 100%;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
 }
 
 .card {
@@ -45,25 +46,30 @@ p {
     text-align: justify;
 }
 
-/* Tambahin styling buat galeri */
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-    max-width: 400px; /* Sesuai ukuran card */
-}
-
-.gallery img {
-    width: 100px; /* Ukuran lebih kecil biar muat banyak */
-    height: 100px;
-    object-fit: cover; /* Biar proporsinya tetap bagus */
+/* SLIDESHOW */
+.swiper-container {
+    width: 90%;
+    max-width: 400px;
+    height: 300px;
     border-radius: 10px;
+    overflow: hidden;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
 }
 
-.gallery img:hover {
-    transform: scale(1.1);
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Warna tombol navigasi */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #FF1493;
+}
+
+/* Warna indikator (dot) */
+.swiper-pagination-bullet {
+    background: #FF1493;
 }
