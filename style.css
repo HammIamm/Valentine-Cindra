@@ -50,8 +50,8 @@ p {
 /* SLIDESHOW */
 .swiper-container {
     width: 100%;
-    max-width: 800px; /* Ukuran maksimal 800px */
-    height: auto; /* Tinggi disesuaikan dengan rasio gambar */
+    max-width: 600px; /* Ukuran maksimal 600px */
+    height: auto; /* Menyesuaikan tinggi dengan lebar gambar */
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
@@ -59,8 +59,8 @@ p {
 
 .swiper-slide img {
     width: 100%;
-    height: auto; /* Menjaga rasio gambar dan menghindari terpotong */
-    object-fit: cover; /* Gambar akan memenuhi area dan terpotong jika perlu */
+    height: auto; /* Menjaga rasio gambar agar tidak terpotong */
+    object-fit: cover; /* Menyesuaikan gambar dalam area tanpa merubah rasio */
     border-radius: 10px;
     display: block;
 }
@@ -86,4 +86,16 @@ audio {
     display: block;
     margin-left: auto;
     margin-right: auto; /* Agar tampil di tengah */
+}
+
+/* Responsif: Menyesuaikan untuk tampilan perangkat mobile */
+@media (max-width: 600px) {
+    .swiper-container {
+        max-width: 100%;
+        height: 250px; /* Menurunkan ukuran gambar agar pas di layar kecil */
+    }
+    
+    audio {
+        width: 50%; /* Audio player lebih kecil pada perangkat mobile */
+    }
 }
