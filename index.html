@@ -14,6 +14,14 @@
             <p id="typing-text"></p>
         </div>
 
+        <!-- Pemutar Musik MP3 -->
+        <div class="audio-player">
+            <audio controls>
+                <source src="Fearless MP3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
         <!-- Slideshow Foto -->
         <div class="swiper-container">
             <div class="swiper-wrapper">
@@ -41,44 +49,9 @@
             <!-- Indikator (dot) -->
             <div class="swiper-pagination"></div>
         </div>
-
-        <!-- Pemutar Musik (YouTube Embed) -->
-        <div class="music-container">
-            <iframe id="youtube-player" width="300" height="80"
-                src="https://www.youtube.com/embed/7lLigiVgJsE?enablejsapi=1"
-                frameborder="0" allow="autoplay; encrypted-media"></iframe>
-            <button onclick="toggleMusic()">Play/Pause</button>
-        </div>
-
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
-
-    <script>
-        // Play/Pause YouTube Music
-        let player;
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('youtube-player');
-        }
-
-        function toggleMusic() {
-            if (player) {
-                let state = player.getPlayerState();
-                if (state === 1) { // Sedang main
-                    player.pauseVideo();
-                } else {
-                    player.playVideo();
-                }
-            }
-        }
-
-        // Load API YouTube
-        let tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        let firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    </script>
-
 </body>
 </html>
