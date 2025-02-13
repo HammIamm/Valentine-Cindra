@@ -1,34 +1,30 @@
 body {
+    background-color: #ffdde1;
     font-family: 'Arial', sans-serif;
-    background-color: #FFC0CB;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    text-align: center;
     margin: 0;
+    padding: 0;
 }
 
 .container {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     max-width: 90%;
-    width: 400px;
-    text-align: center;
+    width: 600px;
+    background-color: white;
+    padding: 20px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    color: #FF1493;
+    color: #ff4d6d;
     font-size: 24px;
 }
 
-.message-box {
+.message {
     font-size: 16px;
     color: #333;
-    text-align: left;
-    padding: 10px;
-    border-radius: 10px;
-    background: #FFF0F5;
-    white-space: pre-line;
+    line-height: 1.6;
+    text-align: justify;
+    overflow-wrap: break-word;
 }
