@@ -3,14 +3,14 @@ document.addEventListener("DOMContentLoaded", function () {
     let delay = 0;
 
     paragraphs.forEach((p) => {
-        const text = p.innerHTML.trim(); // Ambil teks tanpa spasi berantakan
-        p.innerHTML = ""; // Kosongkan teks dulu
+        const text = p.textContent.trim(); // Pastikan teks tetap rapi
+        p.textContent = ""; // Kosongkan teks dulu
         p.style.display = "block";
 
         setTimeout(() => {
             let i = 0;
             const typingEffect = setInterval(() => {
-                p.innerHTML += text[i];
+                p.textContent += text[i];
                 i++;
                 if (i === text.length) {
                     clearInterval(typingEffect);
@@ -19,5 +19,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }, delay);
 
         delay += text.length * 30 + 500; // Jeda antar paragraf
-    });
+    });
 });
