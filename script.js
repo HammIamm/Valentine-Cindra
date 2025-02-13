@@ -22,11 +22,10 @@ const speed = 50; // Kecepatan ngetik (ms)
 
 document.addEventListener("DOMContentLoaded", () => {
     const typingElement = document.getElementById("typing-text");
-
     if (typingElement) {
         function typeWriter() {
             if (index < text.length) {
-                typingElement.textContent += text.charAt(index);
+                typingElement.innerHTML += text.charAt(index);
                 index++;
                 setTimeout(typeWriter, speed);
             }
@@ -48,6 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
         pagination: {
             el: ".swiper-pagination",
             clickable: true
-        }
-    });
+        }
+    });
+
+    // Autoplay MP3 saat halaman dimuat
+    const audioElement = new Audio('path/to/Fearless MP3'); // Ganti dengan path yang benar
+    audioElement.autoplay = true; // Set autoplay
+    audioElement.loop = true; // Set loop jika ingin musik diputar berulang-ulang
+    audioElement.play(); // Mulai memutar musik
 });
