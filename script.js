@@ -1,6 +1,19 @@
-// Typing Effect
-const text = `First of all, aku mau bilang ini, makasih yaa sayang udah nerima aku yang ke sekian kali, walaupun mungkin buat kamu itu nggak gampang. Akhir-akhir ini aku mikir, dengan semua naik turunnya hubungan kita, dengan aku yang pengen selalu sama kamu dan nggak mau udahan, tapi justru karena itu kita masih bisa bareng terus. Dan yang aku lihat, kita tuh bahagia yaa, kaya makin bisa saling nerima satu sama lain. Terus juga aku ngerasa kalau bercanda tuh kayanya bahagia banget gitu, dan kita juga sama-sama saling butuh gitu lhoo. Jadi kaya, ih gemes banget gitu mwehehehe.
+document.addEventListener("DOMContentLoaded", () => {
+    // Membuat objek audio untuk memutar file MP3
+    const audioElement = new Audio('Fearless MP3.mp3'); // Pastikan nama file benar
+    audioElement.autoplay = true; // Memulai pemutaran otomatis
+    audioElement.loop = true; // Musik akan berulang
+    audioElement.play()
+        .then(() => {
+            console.log("Musik sedang diputar!");
+        })
+        .catch((error) => {
+            console.error("Terjadi kesalahan saat memutar musik:", error);
+        });
 
+    // Typing Effect
+    const text = `First of all, aku mau bilang ini, makasih yaa sayang udah nerima aku yang ke sekian kali, walaupun mungkin buat kamu itu nggak gampang. Akhir-akhir ini aku mikir, dengan semua naik turunnya hubungan kita, dengan aku yang pengen selalu sama kamu dan nggak mau udahan, tapi justru karena itu kita masih bisa bareng terus. Dan yang aku lihat, kita tuh bahagia yaa, kaya makin bisa saling nerima satu sama lain. Terus juga aku ngerasa kalau bercanda tuh kayanya bahagia banget gitu, dan kita juga sama-sama saling butuh gitu lhoo. Jadi kaya, ih gemes banget gitu mwehehehe.
+    
 Sama kamu itu gregetan tauu, wkwkwk. Dengan sifat kamu yang gengsian itu, yaa walaupun di balik sifat itu ada orang yang sebenernya sayang dan peduli banget sama aku. Cuma yaa gengsian aja orangnya 😗😗. Makasih yaa, sudah selalu ada buat aku dan buat kita. Makasih juga sudah bertahan sama aku di sini sampai sejauh ini. Makasih sudah membuat aku merasa disayang. Semoga kita selalu bareng yaa, sayangg 😖❤.
 
 Walaupun kita sekarang jauh, dan itu terkadang nggak gampang buat jalaninnya, tapi semoga kita selalu punya alasan buat mau berusaha dan bertahan dengan segala masalah yang bakal ada nanti. Pasti kita bisaa yaaa, sayangg‼
@@ -17,23 +30,18 @@ I lovee youu sayangg😖😖❤❤‼
 
 Sayangg sekalii samaa kamuu hihiii~ Kamu bakal selalu jadi Cindra yang lucuu itu di mata akuu 😚😚🤏🏻🤏🏻❤❤🫂🫂🧸🧸🤍🤍`;
 
-let index = 0;
-const speed = 50; // Kecepatan ngetik (ms)
-
-// Fungsi untuk efek ketik
-function typeWriter() {
-    if (index < text.length) {
-        const typingElement = document.getElementById("typing-text");
-        typingElement.innerHTML += text.charAt(index);
-        index++;
-        setTimeout(typeWriter, speed);
-    }
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    // Memulai efek ketik
+    let index = 0;
+    const speed = 50; // Kecepatan ngetik (ms)
     const typingElement = document.getElementById("typing-text");
+
     if (typingElement) {
+        function typeWriter() {
+            if (index < text.length) {
+                typingElement.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, speed);
+            }
+        }
         setTimeout(typeWriter, 500);
     }
 
@@ -51,12 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
         pagination: {
             el: ".swiper-pagination",
             clickable: true
-        }
-    });
-
-    // Pemutar Musik (MP3)
-    const audioElement = new Audio('Fearless MP3.mp3');  // Pastikan nama file dan ekstensi benar
-    audioElement.autoplay = true; // Mengatur autoplay agar musik langsung diputar
-    audioElement.loop = true; // Agar musik berulang terus
-    audioElement.play(); // Memulai pemutaran musik
+        }
+    });
 });
